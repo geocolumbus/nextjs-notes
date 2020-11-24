@@ -1,12 +1,17 @@
-import React from 'react'
-import { Box, Checkbox, Typography } from '@material-ui/core'
+import React from "react"
+import { Box, Checkbox, Typography } from "@material-ui/core"
 
 const LevelB = props => {
-    return <Box display='flex'
-                flexDirection='row'>
-        <Checkbox></Checkbox>
-        <Typography>Level B</Typography>
-    </Box>
+
+  const handleClick = () => {
+    props.updateCheckbox(props.dataKey, props.subKey)
+  }
+
+  return <Box display='flex'
+              flexDirection='row'>
+    <Checkbox checked={props.data.checked} style={{ paddingLeft: 40 }} onClick={handleClick}></Checkbox>
+    <Typography style={{ paddingTop: 9 }}>{props.children} ({props.data.count})</Typography>
+  </Box>
 }
 
 export default LevelB

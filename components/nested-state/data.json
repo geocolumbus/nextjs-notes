@@ -1,0 +1,33 @@
+{
+  "One": {
+    "count": 16,
+    "checked": true,
+    "children": {
+      "Alpha": {
+        "count": 7,
+        "checked": false
+      },
+      "Beta": {
+        "count": 14,
+        "checked": true
+      }
+    }
+  },
+  "Two": {
+    "count": 16,
+    "checked": false
+  },
+  "Three": {
+    "count": 64,
+    "children": {
+      "Gumdrop": {
+        "count": 9,
+        "checked": false
+      },
+      "Jelly Bean": {
+        "count": 18,
+        "checked": true
+      }
+    }
+  }
+}
