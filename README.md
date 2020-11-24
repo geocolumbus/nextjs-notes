@@ -2,6 +2,17 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Pull down the project
+
+    npm install
+    npm run dev
+
+Open [http://localhost:3002](http://localhost:3002) with your browser to see the result.
+
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+
+## How this was created
+
 This project was created per [How to set-up Next.js and Material UI](https://developerhandbook.com/react/how-to-set-up-nextjs-material-ui/):
 
     npx create-next-app
@@ -10,13 +21,6 @@ This project was created per [How to set-up Next.js and Material UI](https://dev
 
 Update ```pages/index.js``` and create ```pages/_document.jsx``` per the above instructions.
 
-Run the development server:
-
-    npm run dev
-
-Open [http://localhost:3002](http://localhost:3002) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
 ## Learn More
 
