@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Inputs from '../components/Inputs.js'
-import NestedState from '../components/nested-state/NestedState'
+import NestedState from '../components/url-state/NestedState'
 
 const useStyles = makeStyles(theme => ({}))
 
