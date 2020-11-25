@@ -2,26 +2,23 @@ import React, { useState } from "react"
 import { Box } from "@material-ui/core"
 import LevelA from "./LevelA"
 import initialData from "./data.json"
+import { AddStateVariables, UpdateCheckBox } from "./utilities"
 
 const NestedState = () => {
 
+  AddStateVariables(initialData)
   const [data, setData] = useState(initialData)
-
-  const updateCheckbox = (key, subKey) => {
-    const newData = Object.assign({}, data)
-    if (subKey) {
-      newData[key].children[subKey].checked = !newData[key].children[subKey].checked
-    } else if (key) {
-      newData[key].checked = !newData[key].checked
-    }
-    setData(newData)
-    console.log(`update ${key}->${subKey}`)
-  }
+  const updateCheckbox = UpdateCheckBox(data,setData)
 
   return <Box>
     <h2>Nested States</h2>
-    {Object.keys(data).map((key, index) => {
-      return <LevelA data={data[key]} key={key} dataKey={key} updateCheckbox={updateCheckbox}>{key}</LevelA>
+    {data.map(levelA => {
+      return <LevelA data={levelA}
+                     key={levelA.name}
+                     dataKey={levelA.name}
+                     updateCheckbox={updateCheckbox}>
+        {levelA.name}
+      </LevelA>
     })}
   </Box>
 }

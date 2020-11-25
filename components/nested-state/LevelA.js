@@ -12,16 +12,16 @@ const LevelA = props => {
     <Box display='flex'
          flexDirection='row'
          align='flex-top'>
-      <Checkbox checked={props.data.checked || false} onClick={handleClick}></Checkbox>
+      <Checkbox checked={props.data.checked} onClick={handleClick}/>
       <Typography style={{ paddingTop: 9 }}>{props.children} ({props.data.count})</Typography>
     </Box>
-    {props.data.children && Object.keys(props.data.children).map((key, index) => {
+    {props.data.children && props.data.children.map(levelB => {
       return <LevelB
         dataKey={props.dataKey}
-        subKey={key}
-        key={key}
-        data={props.data.children[key]}
-        updateCheckbox={props.updateCheckbox}>{key}</LevelB>
+        subKey={levelB.name}
+        key={levelB.name}
+        data={levelB}
+        updateCheckbox={props.updateCheckbox}>{levelB.name}</LevelB>
     })}
   </Box>
 }
