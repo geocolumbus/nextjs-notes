@@ -1,27 +1,35 @@
 import React from "react"
-import { Box } from "@material-ui/core"
+import { Box, Collapse } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
+import { formatHTML } from "../lib/utilities"
 
+/*
 const useStyles = makeStyles(theme => ({
   container: {
     backgroundColor: "#ffc",
-    border: "thin solid black"
+    border: "thin solid yellow"
   },
   item: {
-    width: 100, height: 60,
-    backgroundColor: "lightskyblue", border: "thin solid black",
-    textAlign: "center"
+    backgroundColor: "lightskyblue",
+    border: "thin solid blue"
   }
 }))
+ */
 
 const FlexBox = () => {
-  const classes = useStyles()
+  // const classes = useStyles()
 
   const threeItemsEquallySpaced = () => {
-    return <Box className={classes.container}>
-      <Box className={classes.item}>A</Box>
-      <Box className={classes.item}>B</Box>
-      <Box className={classes.item}>C</Box>
+    const code = <Box>
+      <Box style={{ color: "red" }}>A</Box>
+      <Box>B</Box>
+      <Box>C</Box>
+    </Box>
+    return <Box>
+      <Box>
+        <pre>{formatHTML(code)}</pre>
+      </Box>
+      <Box>{code}</Box>
     </Box>
   }
 
